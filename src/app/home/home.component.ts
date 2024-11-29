@@ -3,11 +3,12 @@ import { Message, SignalrService, User } from './../signalr.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-home',
   standalone:true,
-  imports:[CommonModule ,FormsModule],
+  imports:[CommonModule ,FormsModule,ButtonModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
