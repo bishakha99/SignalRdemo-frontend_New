@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-6 pl-4">
-      Welcome <b>{{ signalrService.userData.name }}</b>
+      Welcome <b>{{ signalrService.userData?.name }}</b>
     </div>
     <div class="col-6 text-right" style="cursor: pointer;" (click)="logOut()">
       Logout
@@ -22,7 +22,7 @@
 
     <!-- Chat Box -->
     <div class="col-12 col-sm-3 mt-4">
-      <label><b>{{ selectedUser.name }}</b></label>
+      <label><b>{{ selectedUser?.name }}</b></label>
       <div id="chatBox">
         <div #msgBox id="msgBox" [scrollTop]="msgBox.scrollHeight">
           <div
