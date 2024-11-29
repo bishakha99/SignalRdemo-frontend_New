@@ -1,11 +1,8 @@
-// import { ToastrService } from 'ngx-toastr';
 import { Injectable } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import * as signalR from '@microsoft/signalr';
 import { ToastrService } from 'ngx-toastr';
-
 
 //4Tutorial
 export class User {
@@ -14,8 +11,6 @@ export class User {
   public connId!: string;//signalr
   public msgs!: Array<Message>;//5Tutorial (only client-side property)
 }
-
-
 //5Tutorial
 export class Message {
   constructor(
@@ -23,10 +18,6 @@ export class Message {
     public mine: boolean
   ) {}
 }
-
-
-
-
 @Injectable({ providedIn: 'root' })
 export class SignalrService {
     constructor(
@@ -34,18 +25,18 @@ export class SignalrService {
         public router: Router //2Tutorial
         ) { }
 
-
-       
     hubConnection!:signalR.HubConnection;
     //Added in tutorial 2
     personName!: string;
+    userData!: User;
   //3Tutorial
+  
   ssSubj = new Subject<any>();
   ssObs(): Observable<any> {
       return this.ssSubj.asObservable();
   }
-
     startConnection = () => {
+      
         this.hubConnection = new signalR.HubConnectionBuilder()
         .withUrl('https://localhost:7069/toastr', {
             skipNegotiation: true,
@@ -60,5 +51,4 @@ export class SignalrService {
         })
         .catch(err => console.log('Error while starting connection: ' + err))
     }
-
 }

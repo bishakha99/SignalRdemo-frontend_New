@@ -1,10 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { SignalrService } from './../signalr.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { ToastrModule } from 'ngx-toastr';
 import { AuthServiceService } from './auth-service.service';
 
 @Component({
